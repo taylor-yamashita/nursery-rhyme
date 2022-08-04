@@ -27,5 +27,14 @@ describe JacksHouse do
       end
     }
   end
+
+  it "generates a random rhyme that uses each phrase exactly once" do
+    random_rhyme = jack.random_rhyme
+    lines = random_rhyme.split("\n")  # create array of lines
+    last_line = lines[lines.length - 1]
+    expect(last_line).to satisfy {
+      
+    }
+  end
 end
 
