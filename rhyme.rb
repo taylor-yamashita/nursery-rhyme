@@ -1,19 +1,19 @@
 class JacksHouse
   # generate normal nursery rhyme
   def normal_rhyme
-    construct_rhyme(base_phrases)
+    construct_rhyme(normal_phrases)
   end
 
   # generate randomized nursery rhyme
   def random_rhyme
-    random_phrases = base_phrases.shuffle
+    random_phrases = normal_phrases.shuffle
     construct_rhyme(random_phrases)
   end
 
   private
 
   # nursery rhyme components
-  def base_phrases
+  def normal_phrases
     ["the house that Jack built",
       "the malt that lay in",
       "the rat that ate",
@@ -31,18 +31,12 @@ class JacksHouse
   def construct_rhyme(phrases)
     rhyme = []
     (0..(phrases.length - 1)).each do |i|
-      line = ["This is"]
-      j = i
-      while j >= 0
-        line << phrases[j]
-        j -= 1
+      line = []
+      (0..i).each do |j|
+        line << phrases[j] 
       end
-      rhyme << line.join(" ") + "."
+      rhyme << "This is " + line.reverse.join(" ") + "."
     end
     rhyme.join("\n")
   end
 end
-
-
-j = JacksHouse.new
-puts j.random_rhyme
