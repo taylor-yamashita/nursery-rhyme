@@ -15,3 +15,17 @@ describe JacksHouse do
     expect(random_rhyme_1).not_to eq(random_rhyme_2)
   end
 end
+
+it "generates a random rhyme with phrases in the same random order in each line" do 
+  random_rhyme = jack.random_rhyme
+  lines = random_rhyme.split("\n")  # create array of lines
+  lines = lines.map {|line| line.gsub("This is ", "").gsub(".", "") } # remove preamble and periods
+  
+  # check that each line includes the previous line
+  expect(lines).to satisfy {
+    (1..(lines.length - 1)).each do |i|
+      lines[i].include? lines[i - 1]
+    end
+  }
+end
+
