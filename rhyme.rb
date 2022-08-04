@@ -1,6 +1,6 @@
 class JacksHouse
-  # generate nursery rhyme
-  def generate_rhyme
+  # generate normal nursery rhyme
+  def normal_rhyme
     rhyme = []
     (0..(phrases.length - 1)).each do |i|
       line = ["This is"]
@@ -12,6 +12,10 @@ class JacksHouse
       rhyme << line.join(" ") + "."
     end
     rhyme.join("\n")
+  end
+
+  # generate randomized nursery rhyme
+  def random_rhyme
   end
 
   private
