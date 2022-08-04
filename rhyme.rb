@@ -1,7 +1,24 @@
-class JacksHouse
-    def rhyme
-        # nursery rhyme components
-        phrases = ["the house that Jack built",
+class JacksHouse    
+    # generate nursery rhyme
+    def generate_rhyme
+        rhyme = []
+        for i in 0..(phrases.length()-1)
+            line = ["This is"]
+            j = i
+            while j >= 0
+                line << phrases[j]
+                j -= 1
+            end
+            rhyme << line.join(" ") + "."
+        end
+        return rhyme.join("\n")
+    end
+
+    private
+
+    # nursery rhyme components
+    def phrases
+        ["the house that Jack built",
         "the malt that lay in",
         "the rat that ate",
         "the cat that killed",
@@ -13,21 +30,5 @@ class JacksHouse
         "the rooster that crowed in the morn that woke",
         "the farmer sowing his corn that kept",
         "the horse and the hound and the horn that belonged to"]
-
-        # generate nursery rhyme
-        rhyme = ""
-        for i in 0..(phrases.length()-1)
-            string = "This is "
-            j = i
-            while j >= 0
-                string += phrases[j]
-                if j != 0 then string += " " end
-                j -= 1
-            end
-            string += "."
-            rhyme += string
-            if i != phrases.length() - 1 then rhyme += "\n" end
-        end
-        return rhyme
     end
 end

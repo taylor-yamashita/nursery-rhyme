@@ -6,6 +6,6 @@ describe JacksHouse do
 
     it 'returns nursery rhyme string' do 
         rhyme = File.read("rhyme.txt")
-        expect(jack.rhyme).to eq(rhyme)
+        expect(jack.generate_rhyme).to eq(rhyme)
     end
 end
