@@ -1,10 +1,10 @@
 class JacksHouse
-  # generate normal nursery rhyme
+  # generate the original ("normal") nursery rhyme
   def normal_rhyme
     construct_rhyme(normal_phrases)
   end
 
-  # generate randomized nursery rhyme
+  # generate a nursery rhyme with phrases in randomized order
   def random_rhyme
     random_phrases = normal_phrases.shuffle
     construct_rhyme(random_phrases)
@@ -12,7 +12,7 @@ class JacksHouse
 
   private
 
-  # nursery rhyme components
+  # store array of nursery rhyme phrases in original ("normal") order
   def normal_phrases
     ["the house that Jack built",
       "the malt that lay in",
@@ -28,6 +28,7 @@ class JacksHouse
       "the horse and the hound and the horn that belonged to"]
   end
 
+  # given an array of phrases, construct and return nursery rhyme string
   def construct_rhyme(phrases)
     rhyme = []
     (0..(phrases.length - 1)).each do |i|
