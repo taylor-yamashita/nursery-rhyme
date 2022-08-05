@@ -53,7 +53,7 @@ describe JacksHouse do
 
   it "generates a semi-randomized rhyme ending with 'the house that Jack built'" do
     semi_random_rhyme = jack.semi_random_rhyme
-    jack_phrase = jack.normal_phrases[0]  # "the house that Jack built"
+    jack_phrase = jack.normal_phrases[0] # "the house that Jack built"
     lines = semi_random_rhyme.split("\n")
     expect(lines).to satisfy {
       lines.each do |line|
