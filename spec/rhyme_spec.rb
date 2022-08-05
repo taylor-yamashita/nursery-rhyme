@@ -33,7 +33,9 @@ describe JacksHouse do
     lines = random_rhyme.split("\n")  # create array of lines
     last_line = lines[lines.length - 1]
     expect(last_line).to satisfy {
-      
+      jack.normal_phrases.each do |phrase|
+        last_line.include? phrase
+      end
     }
   end
 end
