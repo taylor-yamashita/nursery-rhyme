@@ -14,7 +14,7 @@ class JacksHouse
       "the farmer sowing his corn that kept",
       "the horse and the hound and the horn that belonged to"]
   end
-  
+
   # generate the original ("normal") nursery rhyme
   def normal_rhyme
     construct_rhyme(normal_phrases)
@@ -34,7 +34,7 @@ class JacksHouse
     (0..(phrases.length - 1)).each do |i|
       line = []
       (0..i).each do |j|
-        line << phrases[j] 
+        line << phrases[j]
       end
       rhyme << "This is " + line.reverse.join(" ") + "."
     end
