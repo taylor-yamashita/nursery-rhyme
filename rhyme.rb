@@ -26,6 +26,14 @@ class JacksHouse
     construct_rhyme(random_phrases)
   end
 
+  # generate a nursery rhyme with phrases in semi-randomized order
+  def semi_random_rhyme
+    phrases_copy = normal_phrases
+    jack_phrase = phrases_copy.shift(1) # "the house that Jack built."
+    semi_random_phrases = phrases_copy.shuffle.unshift(jack_phrase)  # shuffle and add last phrase
+    construct_rhyme(semi_random_phrases)
+  end
+
   private
 
   # given an array of phrases, construct and return nursery rhyme string
