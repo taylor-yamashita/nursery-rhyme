@@ -4,14 +4,14 @@ require_relative "../rhyme"
 describe JacksHouse do
   subject(:jack) { JacksHouse.new }
 
-  describe "normal nursery rhyme method" do
+  describe ".normal_rhyme" do
     it "generates a normal nursery rhyme" do
       rhyme = File.read("rhyme.txt")
       expect(jack.normal_rhyme).to eq(rhyme)
     end
   end
 
-  describe "randomized nursery rhyme method" do
+  describe ".random_rhyme" do
     it "generates different randomized nursery rhymes each time" do
       random_rhyme_1 = jack.random_rhyme
       random_rhyme_2 = jack.random_rhyme
@@ -42,7 +42,7 @@ describe JacksHouse do
     end
   end
 
-  describe "semi-randomized nursery rhyme method" do
+  describe ".semi_random_rhyme" do
     it "generates different semi-randomized nursery rhymes each time" do
       semi_random_1 = jack.semi_random_rhyme
       semi_random_2 = jack.semi_random_rhyme
